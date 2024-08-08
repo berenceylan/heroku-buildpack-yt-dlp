@@ -5,8 +5,8 @@ BUILD_DIR=${1:-}
 cd $BUILD_DIR
 mkdir -p vendor/yt
 cd vendor/yt
-curl --location https://github.com/yt-dlp/yt-dlp/releases/download/2024.04.09/yt-dlp -o yt-dlp
-echo '7f12092fb95ffa2c8947c855298c94c612c9c0e969e132d7eca5502981955c99  yt-dlp' > yt-dlp.sha
+curl --location https://github.com/yt-dlp/yt-dlp/releases/download/2024.08.06/yt-dlp -o yt-dlp
+echo '2f77f6a200733fec8367031a52a75b2b02973ea25322d1488a4bfd059bc69c49  yt-dlp' > yt-dlp.sha
 sha256sum --check yt-dlp.sha
 chmod a+rx yt-dlp
 ./yt-dlp --version
