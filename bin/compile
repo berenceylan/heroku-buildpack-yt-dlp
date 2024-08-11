@@ -15,7 +15,7 @@ mkdir -p $(dirname $PROFILE_PATH)
 echo 'export PATH="$PATH:/app/vendor/yt"' >> $PROFILE_PATH
 
 echo "-----> Installing yt-dlp-youtube-oauth2 plugin"
-curl -L https://github.com/coletdjnz/yt-dlp-youtube-oauth2/archive/main.zip -o yt-dlp-youtube-oauth2.zip
-unzip yt-dlp-youtube-oauth2.zip
-mv yt-dlp-youtube-oauth2-main/yt_dlp_plugins $BUILD_DIR/
-rm -rf yt-dlp-youtube-oauth2.zip yt-dlp-youtube-oauth2-main
+mkdir -p $BUILD_DIR/yt_dlp_plugins
+git clone --depth 1 https://github.com/coletdjnz/yt-dlp-youtube-oauth2.git temp_plugin
+cp -R temp_plugin/yt_dlp_plugins/* $BUILD_DIR/yt_dlp_plugins/
+rm -rf temp_plugin
